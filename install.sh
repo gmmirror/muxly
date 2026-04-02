@@ -12,6 +12,10 @@ if [[ -d "${PREFIX}/opt/muxly" ]]; then
     command rm -rf "${PREFIX}/opt/muxly"
 fi
 
+if [[ -x "${PREFIX}/bin/muxly" ]]; then
+    command rm -f "${PREFIX}/bin/muxly"
+fi
+
 command git clone --depth 1 \
     'https://github.com/Zeronetsec/Muxly' \
     "${PREFIX}/tmp/muxly"
